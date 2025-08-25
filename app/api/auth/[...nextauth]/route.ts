@@ -15,6 +15,7 @@ const handler = NextAuth({
       }
       return token;
     },
+    
     async session({ session, token }) {
       session.user = {
         name: token.name as string,
@@ -23,7 +24,6 @@ const handler = NextAuth({
       return session;
     },
   },
-
   secret: process.env.NEXTAUTH_SECRET,
 });
 export { handler as GET, handler as POST };
