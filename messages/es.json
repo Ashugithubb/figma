@@ -1,0 +1,10 @@
+{
+  "loginPageText": {
+    "title": "Priorización de Requisitos",
+    "text": "Una aplicación para priorizar los requisitos del Centro de Tecnología.",
+    "loginText": "Iniciar Sesión",
+    "continueWithGoogle": "Continuar con Google",
+    "english": "English (United States)",
+    "spanish": "Español (España)"
+  }
+}
