@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import DateComponent from "./date-component";
 import Caption from "./caption-component";
 
+
 const CustomTextField = styled(TextField)({
     "& label": {
         top: "-4px",
@@ -12,10 +13,7 @@ const CustomTextField = styled(TextField)({
         fontSize: "14px",
     }
 });
-
-
 export default function FormComponenet() {
-
     return (
         <>
             <Box className={styles.mainBox}>
