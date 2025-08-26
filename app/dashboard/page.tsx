@@ -9,6 +9,7 @@ export default function Home() {
       {session && (
         <div>
           <p>Welcome  dashb0ard, {session.user?.name}</p>
+    
         </div>
       )
       }

@@ -41,10 +41,10 @@
 }
 
 .benificier {
-    color: var(--neutral-neutral-800, #424242);
+    color: var(--neutral-neutral-800, #424242)!important;
     font-family: "Open Sans" !important;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
+    font-size: 16px  !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
 }

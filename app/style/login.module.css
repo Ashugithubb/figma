@@ -111,7 +111,7 @@
 }
 .login {
     display: "flex";
-    flex-direction: "start";
+    flex-direction: start;
     width: 300px;
     margin: 0px;
     line-height: 1.33;
@@ -167,6 +167,7 @@ color: var(--Neutral-Neutral-600,#757575);
         background-size: cover;
         background-position: center;
         height: 100vh;
+        margin-left: "500px";
     }
     body,
     html {
@@ -205,5 +206,24 @@ color: var(--Neutral-Neutral-600,#757575);
         right: auto;
         margin-top: 8px;
         justify-content: center;
+    }
+    .login{
+        margin-left: 220px;
+        margin-top: 1px;
+        
+    }
+    .icon_container{
+        display:"flex";
+        justify-content: center;
+        margin-left: 35%;
+    }
+    .header{
+        margin-left: 50px;
+    }
+    .text{
+        margin-left: 50px;
+    }
+    .google_container{
+        margin-left: 60px;
     }
 }
