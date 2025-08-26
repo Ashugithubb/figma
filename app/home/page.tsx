@@ -1,22 +1,21 @@
 'use client'
 
-import { Typography } from "@mui/material";
-import {useSession } from "next-auth/react";
+import { AppBar, Box, Button, Typography } from "@mui/material";
+import { useSession } from "next-auth/react";
 import FormComponenet from "../components/form";
+import PersistentDrawerLeft from "../components/AppBar";
+import AnchorTemporaryDrawer from "../components/PersistRight";
+import MiniDrawer from "../components/drawer/parmanentDrawaer";
 
 export default function Home() {
   const { data: session } = useSession();
 
   return (
     <>
-      {/* {session && (
-        <div>
-          <p>Welcome, {session.user?.name}</p>
-          <p>{session.user?.email}</p>
-        </div>
-      )
-      } */}
-      <FormComponenet/>
+    
+     <Box sx={{ zIndex: 1 }}><MiniDrawer/></Box>
+      {/* <Box sx={{ zIndex: 1 }}><PersistentDrawerLeft /></Box> */}
+      <Box sx={{ display: "flex",zIndex:-1, justifyContent: "flex-end", }}> <AnchorTemporaryDrawer /></Box>
     </>
   );
 }

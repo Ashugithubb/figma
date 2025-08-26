@@ -10,7 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const CustomTextField = styled(TextField)({
     marginLeft: "24px",
-    width: "600px",
+    width: "562px",
     '& .MuiOutlinedInput-notchedOutline': {
         borderRadius: '10px',
         height: "50px",
@@ -24,7 +24,7 @@ const CustomTextField = styled(TextField)({
 
 
 const CustomSelect = styled(Select)({
-    marginLeft: "24px", width: "287px", '& .MuiOutlinedInput-notchedOutline': {
+    marginLeft: "24px", width: "270px", '& .MuiOutlinedInput-notchedOutline': {
         borderRadius: '10px',
         height: "50px",
     }, '& .MuiInputLabel-root': {
@@ -36,7 +36,7 @@ const CustomSelect = styled(Select)({
     },
 })
 const CustomAutoComplete = styled(Autocomplete)({
-    width: "287px",
+    width: "270px",
     height: "8px",
     marginLeft: "24px",
     '& .MuiOutlinedInput-notchedOutline': {
@@ -89,8 +89,9 @@ export default function FormFillUp() {
             description: "",
         },
     });
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (event: any) => {
 
+console.log(event,'hellllo')
     };
 
 
@@ -99,7 +100,7 @@ export default function FormFillUp() {
 
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Stack direction="column" gap={1} >
+                <Stack direction="column" gap={1} padding={1}>
                     <CustomTextField
                         {...register("name")}
                         error={!!errors.name}
@@ -193,7 +194,7 @@ export default function FormFillUp() {
                                 disablePortal
                                 options={["Domain1", "Domain2"]}
                                 sx={{
-                                    width: "600px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                                    width: "562px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                         borderRadius: '10px',
                                         height: "50px",
                                     },
@@ -228,7 +229,7 @@ export default function FormFillUp() {
                             disablePortal
                             options={["Ten", "Twenty"]}
                             sx={{
-                                width: "287px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                                width: "270px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                     borderRadius: '10px',
                                     height: "50px",
                                 },
@@ -252,7 +253,7 @@ export default function FormFillUp() {
                             disablePortal
                             options={["A", "B", "C"]}
                             sx={{
-                                width: "287px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                                width: "270px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                     borderRadius: '10px',
                                     height: "50px"
                                 },
@@ -279,7 +280,7 @@ export default function FormFillUp() {
                         disablePortal
                         options={["Ten", "Twenty", "Thirty"]}
                         sx={{
-                            width: "600px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                            width: "562px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                 borderRadius: '10px',
                                 height: "50px",
                             },
@@ -306,7 +307,7 @@ export default function FormFillUp() {
                             disablePortal
                             options={["Ten", "Twenty", "Thirty"]}
                             sx={{
-                                width: "287px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                                width: "270px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                     borderRadius: '10px',
                                     height: "50px",
                                 },
@@ -330,7 +331,7 @@ export default function FormFillUp() {
                             disablePortal
                             options={["Yes", "No"]}
                             sx={{
-                                width: "287px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                                width: "270px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                     borderRadius: '10px',
                                     height: "50px"
                                 },
@@ -355,7 +356,7 @@ export default function FormFillUp() {
                         disablePortal
                         options={["Yes", "No"]}
                         sx={{
-                            width: "287px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
+                            width: "270px", height: "8px", marginLeft: "24px", '& .MuiOutlinedInput-notchedOutline': {
                                 borderRadius: '10px',
                                 height: "50px"
                             },
@@ -444,7 +445,7 @@ export default function FormFillUp() {
                             </CustomSelect>
                         </FormControl>
                     </Box>
-                    <FormControl fullWidth>
+                    <FormControl  fullWidth>
                         <InputLabel id="demo-simple-select-label" sx={{ marginLeft: "24px", fontSize: "14px", marginTop: "-5px", color: "#9E9E9E" }}>Status</InputLabel>
                         <CustomSelect
                             labelId="demo-simple-select-label"
@@ -460,11 +461,9 @@ export default function FormFillUp() {
                     <Typography className={styles.benificier} variant="h6" color=" #424242" sx={{ marginLeft: "24px", marginTop: "-5px", color: "#9E9E9E" }}>Timeline</Typography>
                     <DateComponent />
                     <Typography className={styles.benificier} variant="h6" color=" #424242" sx={{ marginLeft: "24px", marginTop: "23px", color: "#9E9E9E" }}>Description</Typography>
-
+                    {/* <Button type="submit">Submit</Button> */}
                 </Stack>
-                <button type="submit">Submit</button>
             </form>
-
         </>
     )
 }

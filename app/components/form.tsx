@@ -6,13 +6,27 @@ import DateComponent from "./date-component";
 import Caption from "./caption-component";
 import FormFillUp from "./form-fiil-up";
 import DummyFormFillUp from "./dummy";
+import { FormFillUpSchema } from "../schema/form.schema";
+import { useForm } from "react-hook-form";
 
 
 export default function FormComponenet() {
+    const {
+        register,
+        handleSubmit,
+        control,
+        formState: { errors },
+    } = useForm<FormFillUpSchema>({})
+
+
+
+    const onSubmit = async (data: any) => {
+        console.log("data: ",data);
+    };
     return (
         <>
-            <Box className={styles.mainBox}>
-                <Paper sx={{ display: "flex", width: "650px", justifyContent: "space-between", background: "#F7F9FC" }}>
+            {/* <Box className={styles.mainBox}> */}
+                <Paper sx={{ display: "flex", width: "620px", justifyContent: "space-between", background: "#F7F9FC" }}>
                     <Box className={styles.text} sx={{ paddingLeft: "24px" }}>New requirment</Box>
                     <Box className={styles.header}>
                         <IconButton sx={{
@@ -25,18 +39,19 @@ export default function FormComponenet() {
                         }}><CloseIcon sx={{ fontSize: "19px", background: "" }} /></IconButton></Box>
 
                 </Paper >
-                <FormFillUp />
-                <Caption />
-                <Paper sx={{ display: "flex", width: "650px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}>
-                    <Button style={{
-                        color: "#01579B",
-                        border: "none",
-                        fontSize: "14px"
-                    }} sx={{ textTransform: 'none', color: "#757575", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px" }} variant="outlined">CREATE</Button>
-                </Paper>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <FormFillUp />
+                    <Caption />
+                    <Paper sx={{ display: "flex", width: "650px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}>
+                        <Button type="submit" style={{
+                            color: "#01579B",
+                            border: "none",
+                            fontSize: "14px"
+                        }} sx={{ textTransform: 'none', color: "#757575", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px",marginRight:"45px" }} variant="outlined">CREATE</Button>
+                    </Paper>
 
-
-            </Box>
+                </form>
+            {/* </Box> */}
 
 
 
