@@ -103,7 +103,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
         ],
     }),
 );
-
 export default function MiniDrawer() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -115,7 +114,6 @@ export default function MiniDrawer() {
     const handleDrawerClose = () => {
         setOpen(!open);
     };
-
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -158,14 +156,14 @@ export default function MiniDrawer() {
                                         background: "#E8F0FE"
                                     },
                                     open
-                                        // ? {
-                                        //     justifyContent: 'initial',
-                                        //     background: "#E8F0FE"
-                                        // }
-                                        // : {
-                                        //     justifyContent: 'center',
-                                        //     background: "#E8F0FE"
-                                        // },
+                                        ? {
+                                            justifyContent: 'initial',
+                                            background: "#E8F0FE"
+                                        }
+                                        : {
+                                            justifyContent: 'center',
+                                            background: "#E8F0FE"
+                                        },
                                 ]}
                             >
                                 <ListItemIcon
@@ -187,7 +185,7 @@ export default function MiniDrawer() {
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                 </ListItemIcon>
                                 <ListItemText
-                                    primary={text }
+                                    primary={text}
                                     sx={[
                                         open
                                             ? {
