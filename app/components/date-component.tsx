@@ -16,26 +16,52 @@ export default function DateComponent() {
                     <DemoContainer components={['DatePicker']} sx={{
                         marginLeft: "24px", width: "300px",
                     }}>
-                        <DatePicker label="Start Date" value={startDate} onChange={(selectedDate) => { setDate(selectedDate) }} slotProps={{ textField: { size: 'small' } }}
+                        <DatePicker label="Start Date" value={startDate} onChange={(selectedDate) => { setDate(selectedDate) }} slotProps={{
+                            textField: {
+                                size: 'small', InputProps: {
+                                    sx: { borderRadius: '10px',  },
+                                },
+                            }
+                        }}
                             sx={{
                                 width: "300px",
                                 "& .MuiInputBase-input": {
                                     height: "100px",
-                                }
+                                    fontSize: "14px",
+                                   
+
+
+                                },
+                                '& .MuiInputLabel-root': { color:"#9E9E9E",},
+                                height: "40px"
+
+
                             }} />
                     </DemoContainer>
                 </LocalizationProvider>
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={['DatePicker']} sx={{
-                        marginLeft: "24px", width: "287px",
+                        marginLeft: "24px", width: "287px", fontSize: "14px",
                     }}  >
-                        <DatePicker label="Finish Date" minDate={startDate ?? undefined} slotProps={{ textField: { size: 'small' } }}
+                        <DatePicker label="Finish Date" minDate={startDate ?? undefined} slotProps={{
+                            textField: {
+                                size: 'small', InputProps: {
+                                    sx: { borderRadius: '10px', backgroundColor: 'white' },
+                                },
+                            }
+                        }}
                             sx={{
                                 width: "273px",
                                 "& .MuiInputBase-input": {
-                                    height: "100px"
-                                }
+                                    height: "10px",
+
+                                },
+                                   '& .MuiInputLabel-root': { color:"#9E9E9E",},
+                                fontSize: "14px",
+                                height: "40px",
+
+
                             }} />
                     </DemoContainer>
                 </LocalizationProvider>

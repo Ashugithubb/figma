@@ -1,17 +1,17 @@
 import { z } from "zod";
 
 export const formFillUpSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  requestedBy: z.string().min(1, "Requested by is required"),
+  name: z.string().min(1, "Required"),
+  requestedBy: z.string().min(1,  "Required"),
 
-  requestingInstitution: z.string().min(1, "Requesting institution is required"),
-  type: z.string().min(1, "Type is required"),
+  requestingInstitution: z.string().min(1,  "Required"),
+  type: z.string().min(1,  "Required"),
 
-  domain: z.string().min(1, "Domain is required"),
+  domain: z.string().min(1, "Required"),
   collaboratorDomain: z.string().optional(),
   followerDomain: z.string().optional(),
 
-  benifitedInstitutions: z.string().min(1, "Benifited institutions required"),
+  benifitedInstitutions: z.string().min(1,  "Required"),
   studyModality: z.string().optional(),
   mandatory: z.enum(["Yes", "No"]),
   alternativeSolutions: z.enum(["Yes", "No"]),
@@ -29,3 +29,6 @@ export const formFillUpSchema = z.object({
 });
 
 export type FormFillUpSchema = z.infer<typeof formFillUpSchema>;
+
+
+ 

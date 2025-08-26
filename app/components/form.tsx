@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import DateComponent from "./date-component";
 import Caption from "./caption-component";
 import FormFillUp from "./form-fiil-up";
+import DummyFormFillUp from "./dummy";
 
 
 export default function FormComponenet() {
@@ -24,11 +25,8 @@ export default function FormComponenet() {
                         }}><CloseIcon sx={{ fontSize: "19px", background: "" }} /></IconButton></Box>
 
                 </Paper >
-                 <FormFillUp/>
-                
+                <FormFillUp />
                 <Caption />
-               
-
                 <Paper sx={{ display: "flex", width: "650px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}>
                     <Button style={{
                         color: "#01579B",
@@ -36,7 +34,7 @@ export default function FormComponenet() {
                         fontSize: "14px"
                     }} sx={{ textTransform: 'none', color: "#757575", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px" }} variant="outlined">CREATE</Button>
                 </Paper>
-                
+
 
             </Box>
 
