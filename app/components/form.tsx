@@ -25,7 +25,7 @@ export default function FormComponenet() {
     };
     return (
         <>
-            {/* <Box className={styles.mainBox}> */}
+
                 <Paper sx={{ display: "flex", width: "620px", justifyContent: "space-between", background: "#F7F9FC" }}>
                     <Box className={styles.text} sx={{ paddingLeft: "24px" }}>New requirment</Box>
                     <Box className={styles.header}>
