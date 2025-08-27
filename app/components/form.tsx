@@ -4,7 +4,7 @@ import styles from "../style/form.module.css";
 import CloseIcon from '@mui/icons-material/Close';
 import DateComponent from "./date-component";
 import Caption from "./caption-component";
-import FormFillUp from "./form-fiil-up";
+import FormFillUp from "./formFillUp/form-fiil-up";
 import { FormFillUpSchema } from "../schema/form.schema";
 import { useForm } from "react-hook-form";
 import { red } from "@mui/material/colors";
@@ -35,6 +35,7 @@ export default function FormComponenet() {
                 position: "sticky",
                 top: 0,
                 p: 1,
+            
             }}>
                 <Box className={styles.text} sx={{ paddingLeft: "24px", }}>New requirment</Box>
                 <Box className={styles.header}>
@@ -54,12 +55,15 @@ export default function FormComponenet() {
                 overflowY: "auto",
                 background: "#fff",
                 p: 2,
+              
             }}>
                 <FormFillUp />
                 <Caption />
 
 
-                <Paper sx={{ display: "flex", width: "650px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}>
+            </Box>
+
+                {/* <Paper sx={{ display: "flex", width: "610px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}> 
                     <Button type="submit" style={{
                         color: "#01579B",
                         border: "none",
@@ -67,9 +71,11 @@ export default function FormComponenet() {
                         position: "sticky",
                         bottom: 0,
                         zIndex: 10,
+                        background:"red",
+                        width:"610px"
                     }} sx={{ textTransform: 'none', color: "#757575", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px", marginRight: "45px" }} variant="outlined">CREATE</Button>
-                </Paper>
-            </Box>
+                </Paper> */}
+                <Box sx={{display:"flex",flexDirection:"row-reverse",marginRight:"15px"}}><Button sx={{ textTransform: 'none', color: "#01579b", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px", marginRight: "45px"}}>CREATE</Button></Box>
         </>
     )
 

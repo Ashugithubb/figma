@@ -18,6 +18,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { Avatar } from '@mui/material';
+import SimpleDialogDemo from '../app/components/profile/profile';
 
 const drawerWidth = 256;
 
@@ -60,7 +62,7 @@ const AppBar = styled(MuiAppBar, {
         {
             props: ({ open }) => open,
             style: {
-                zIndex: 1000852,
+                zIndex: 100000,
                 transition: theme.transitions.create(['margin', 'width'], {
                     easing: theme.transitions.easing.easeOut,
                     duration: theme.transitions.duration.enteringScreen,
@@ -91,70 +93,74 @@ export default function PersistentDrawerLeft() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open} sx={{ background: "#01579B" }}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={[
-                            {
-                                mr: 2,
-                            },
-                            open
-                        ]}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div" >
-                        Requirements prioritization
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                sx={{
-                    width: "100%",
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'border-box',
-                    },
-                    zIndex: "3"
-                }}
-                variant="persistent"
-                anchor="left"
-                open={open}
+        <>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="fixed" open={open} sx={{ background: "#01579B" }}>
 
-            >
-                <DrawerHeader sx={{ zIndex: "1", marginTop: "27px" }}>
-                    {/* <IconButton onClick={handleDrawerClose}> */}
-                    {/* {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />} */}
-                    <Box sx={{ marginTop: "50px", marginRight: "30%" }}><Typography>Requirment List</Typography></Box>
-                    {/* </IconButton> */}
-                </DrawerHeader>
-                <Divider />
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={[
+                                {
+                                    mr: 2,
+                                },
+                                open
+                            ]}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" noWrap component="div" >
+                            Requirements prioritization 
+                        </Typography>
+                    </Toolbar>
 
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
-            <Main open={open}>
-                <DrawerHeader />
+                </AppBar>
+                <Drawer
+                    sx={{
+                        width: "100%",
+                        flexShrink: 0,
+                        '& .MuiDrawer-paper': {
+                            width: drawerWidth,
+                            boxSizing: 'border-box',
+                        },
+                        zIndex: "3"
+                    }}
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
 
-            </Main>
-        </Box>
+                >
+                    <DrawerHeader sx={{ zIndex: "1", marginTop: "27px" }}>
+                        {/* <IconButton onClick={handleDrawerClose}> */}
+                        {/* {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />} */}
+                        <Box sx={{ marginTop: "50px", marginRight: "30%" }}><Typography>Requirment List</Typography></Box>
+                        {/* </IconButton> */}
+                    </DrawerHeader>
+                    <Divider />
+
+                    <Divider />
+                    <List>
+                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                            <ListItem key={text} disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Drawer>
+                <Main open={open}>
+                    <DrawerHeader />
+
+                </Main>
+            </Box>
+        </>
     );
 }

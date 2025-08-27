@@ -1,20 +1,21 @@
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import styles from './page.module.css'
+import styles from './search.module.css'
 export default function SearchTextField() {
-    return (
-         <TextField
+  return (
+    <TextField
       variant="outlined"
       placeholder="Search"
-      className={styles.search}
+
       sx={{
-        width: "300px",
+        width: "273px",
+
         "& .MuiOutlinedInput-root": {
           borderRadius: "10px",
-          height: "50px", 
+          height: "40px",
           display: "flex",
-          alignItems: "center", 
-           fontFamily: "Open Sans",
+          alignItems: "center",
+          fontFamily: "Open Sans",
         },
         "& .MuiInputLabel-root": {
           fontSize: "14px",
@@ -23,13 +24,15 @@ export default function SearchTextField() {
         },
         fontFamily: "Open Sans",
       }}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        ),
+      slotProps={{
+        input: {
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }
       }}
     />
-    );
+  );
 }

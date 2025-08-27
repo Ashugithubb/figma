@@ -18,6 +18,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import HomePaper from '../HomePaper/paper';
+import SimpleDialogDemo from '../profile/profile';
 
 const drawerWidth = 256;
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -136,9 +138,11 @@ export default function MiniDrawer() {
                     >
                         <MenuIcon />
                     </IconButton>
+                   
                     <Typography variant="h6" noWrap component="div">
                         Requirements prioritization
                     </Typography>
+                   <Box sx={{marginLeft:"70%",marginTop:"-17px"}}> <SimpleDialogDemo/></Box> 
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>
@@ -157,10 +161,19 @@ export default function MiniDrawer() {
                     }
                     <Typography sx={{ marginTop: "13px", }}>Requirements list</Typography>
                 </Box>
-                
+
                 <Divider />
 
             </Drawer>
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                <DrawerHeader />
+                <Typography sx={{ marginBottom: 2,color: "#424242", fontSize: "32px",}}>
+                  Requirements list
+                </Typography>
+                <Typography sx={{ marginBottom: 2 }}>
+                    <Box sx={{ marginLeft:"-80px",width:"1832px",height:"964px"}}> <HomePaper/></Box>
+                </Typography>
+            </Box>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
                 <Typography sx={{ marginBottom: 2 }}>
