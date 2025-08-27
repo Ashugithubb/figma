@@ -6,16 +6,21 @@ import FormComponenet from "../components/form";
 import PersistentDrawerLeft from "../components/AppBar";
 import AnchorTemporaryDrawer from "../components/PersistRight";
 import MiniDrawer from "../components/drawer/parmanentDrawaer";
-
+import styles from '../style/home.module.css'
+import HomePaper from "../components/HomePaper/paper";
 export default function Home() {
   const { data: session } = useSession();
 
   return (
     <>
-    
-     <Box sx={{ zIndex: 1 }}><MiniDrawer/></Box>
-      {/* <Box sx={{ zIndex: 1 }}><PersistentDrawerLeft /></Box> */}
-      <Box sx={{ display: "flex",zIndex:-1, justifyContent: "flex-end", }}> <AnchorTemporaryDrawer /></Box>
+
+      <Box className={styles.page}>
+
+        <Box sx={{ zIndex: 1 }}><MiniDrawer /></Box>
+        <Box sx={{ display: "flex", zIndex: -1, justifyContent: "flex-end", }}> <AnchorTemporaryDrawer /></Box>
+        <Typography className={styles.requ}>Requirements list</Typography>
+        <HomePaper />
+      </Box>
     </>
   );
 }

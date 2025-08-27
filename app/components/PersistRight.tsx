@@ -40,8 +40,6 @@ export default function AnchorTemporaryDrawer() {
         <Box
             sx={{ width: "610px", marginTop: "65px" }}
             role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
         >
             <FormComponenet />
         </Box>
@@ -51,7 +49,7 @@ export default function AnchorTemporaryDrawer() {
         <div>
             {(['right'] as const).map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button variant='contained' sx={{ marginTop: "-15px", marginRight: "10px", background: "#01579B", borderRadius: "10px", }} onClick={toggleDrawer(anchor, true)}>CREATE NEW</Button>
+                    <Button variant='contained' sx={{ marginTop: "-60px", marginRight: "10px", background: "#01579B", borderRadius: "10px" }} onClick={toggleDrawer(anchor, true)}>CREATE NEW</Button>
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}

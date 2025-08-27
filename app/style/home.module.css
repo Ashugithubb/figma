@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.opensans {
+    font-family: "Open Sans", sans-serif;
+}
+
+.page {
+    background-color:#F5F5F5;
+    width: 100%;
+    height: 100vh;
+}
+
+.requ {
+    color: #424242 !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 32px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 32px !important;
+    margin-left: 100px !important;
+    width: 278px !important;
+    height: 32px !important;
+    margin-top: -60px !important;
+}

@@ -5,9 +5,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import DateComponent from "./date-component";
 import Caption from "./caption-component";
 import FormFillUp from "./form-fiil-up";
-import DummyFormFillUp from "./dummy";
 import { FormFillUpSchema } from "../schema/form.schema";
 import { useForm } from "react-hook-form";
+import { red } from "@mui/material/colors";
 
 
 export default function FormComponenet() {
@@ -21,41 +21,55 @@ export default function FormComponenet() {
 
 
     const onSubmit = async (data: any) => {
-        console.log("data: ",data);
+        console.log("data: ", data);
     };
     return (
         <>
-            {/* <Box className={styles.mainBox}> */}
-                <Paper sx={{ display: "flex", width: "620px", justifyContent: "space-between", background: "#F7F9FC" }}>
-                    <Box className={styles.text} sx={{ paddingLeft: "24px" }}>New requirment</Box>
-                    <Box className={styles.header}>
-                        <IconButton sx={{
-                            padding: "8px",
-                            marginTop: "-15%",
 
-                        }}><MinimizeIcon sx={{ fontSize: "19px" }} /></IconButton>
-                        <IconButton sx={{
-                            padding: "8px"
-                        }}><CloseIcon sx={{ fontSize: "19px", background: "" }} /></IconButton></Box>
+            <Paper sx={{
+                display: "flex",
+                width: "620px",
+                justifyContent: "space-between",
+                background: "#F7F9FC",
+                zIndex: 10,
+                position: "sticky",
+                top: 0,
+                p: 1,
+            }}>
+                <Box className={styles.text} sx={{ paddingLeft: "24px", }}>New requirment</Box>
+                <Box className={styles.header}>
+                    <IconButton sx={{
+                        padding: "8px",
+                        marginTop: "-15%",
+                    }}><MinimizeIcon sx={{ fontSize: "19px" }} /></IconButton>
+                    <IconButton sx={{
+                        padding: "8px",
 
-                </Paper >
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <FormFillUp />
-                    <Caption />
-                    <Paper sx={{ display: "flex", width: "650px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}>
-                        <Button type="submit" style={{
-                            color: "#01579B",
-                            border: "none",
-                            fontSize: "14px"
-                        }} sx={{ textTransform: 'none', color: "#757575", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px",marginRight:"45px" }} variant="outlined">CREATE</Button>
-                    </Paper>
+                    }}><CloseIcon sx={{ fontSize: "19px", background: "" }} /></IconButton></Box>
 
-                </form>
-            {/* </Box> */}
+            </Paper >
+
+            <Box sx={{
+                maxHeight: "80vh",
+                overflowY: "auto",
+                background: "#fff",
+                p: 2,
+            }}>
+                <FormFillUp />
+                <Caption />
 
 
-
-
+                <Paper sx={{ display: "flex", width: "650px", marginTop: "30px", height: "68px", justifyContent: "flex-end", background: "#F7F9FC" }}>
+                    <Button type="submit" style={{
+                        color: "#01579B",
+                        border: "none",
+                        fontSize: "14px",
+                        position: "sticky",
+                        bottom: 0,
+                        zIndex: 10,
+                    }} sx={{ textTransform: 'none', color: "#757575", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px", marginRight: "45px" }} variant="outlined">CREATE</Button>
+                </Paper>
+            </Box>
         </>
     )
 

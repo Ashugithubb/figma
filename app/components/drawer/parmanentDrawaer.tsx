@@ -20,7 +20,6 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 const drawerWidth = 256;
-
 const openedMixin = (theme: Theme): CSSObject => ({
     width: drawerWidth,
     transition: theme.transitions.create('width', {
@@ -29,7 +28,6 @@ const openedMixin = (theme: Theme): CSSObject => ({
     }),
     overflowX: 'hidden',
 });
-
 const closedMixin = (theme: Theme): CSSObject => ({
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
@@ -47,7 +45,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
 }));
 
@@ -67,8 +64,6 @@ const AppBar = styled(MuiAppBar, {
         {
             props: ({ open }) => open,
             style: {
-                // marginLeft: drawerWidth,
-                // width: `calc(100% - ${drawerWidth}px)`,
                 zIndex: 1000852,
                 transition: theme.transitions.create(['width', 'margin'], {
                     easing: theme.transitions.easing.sharp,
@@ -78,7 +73,6 @@ const AppBar = styled(MuiAppBar, {
         },
     ],
 }));
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme }) => ({
         width: drawerWidth,
@@ -106,8 +100,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const [closeHeight, setHeight] = React.useState(true)
+    const [heightValue, setHeightValue] = React.useState(64)
 
     const handleDrawerOpen = () => {
+        if (closeHeight) {
+            setHeightValue(48)
+        }
+        if (!closeHeight) {
+            setHeightValue(64)
+        }
+        setHeight(!closeHeight)
         setOpen(!open);
     };
 
@@ -145,62 +148,16 @@ export default function MiniDrawer() {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List sx={{ height: "56px", width: "72px", background: "#E8F0FE" }}>
-                    {['Requirements list'].map((text, index) => (
-                        <ListItem key={text} disablePadding sx={{ display: 'block', background: "#E8F0FE" }}>
-                            <ListItemButton
-                                sx={[
-                                    {
-                                        minHeight: 48,
-                                        px: 2.5,
-                                        background: "#E8F0FE"
-                                    },
-                                    open
-                                        ? {
-                                            justifyContent: 'initial',
-                                            background: "#E8F0FE"
-                                        }
-                                        : {
-                                            justifyContent: 'center',
-                                            background: "#E8F0FE"
-                                        },
-                                ]}
-                            >
-                                <ListItemIcon
-                                    sx={[
-                                        {
-                                            minWidth: 0,
-                                            justifyContent: 'center',
-                                            background: "#E8F0FE"
-                                        },
-                                        open
-                                            ? {
-                                                mr: 3,
-                                            }
-                                            : {
-                                                mr: 'auto',
-                                            },
-                                    ]}
-                                >
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText
-                                    primary={text}
-                                    sx={[
-                                        open
-                                            ? {
-                                                // background:"#E8F0FE",
-                                                opacity: 1,
-                                            }
-                                            : {
-                                                opacity: 0,
-                                            },
-                                    ]}
-                                />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
+
+                <Box sx={{ display: "flex", flexDirection: "row", background: "#E8F0FE", gap: 3, height: `${heightValue}px` }}>
+                    {closeHeight ? (<IconButton sx={{ marginLeft: "9px", display: "flex", justifyContent: "center" }}>
+                        <img style={{ height: "20px", width: "20px" }}
+                            src="/req.svg" /></IconButton>) : (<IconButton sx={{ marginLeft: "3px" }}>
+                                <img src="/req.svg" /></IconButton>)
+                    }
+                    <Typography sx={{ marginTop: "13px", }}>Requirements list</Typography>
+                </Box>
+                
                 <Divider />
 
             </Drawer>
