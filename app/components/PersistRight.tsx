@@ -12,6 +12,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import FormFillUp from './formFillUp/form-fiil-up';
 import FormComponenet from './form';
+import ReqFormComponent from '../newRequirementForm/requirment';
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
@@ -41,7 +42,10 @@ export default function AnchorTemporaryDrawer() {
             sx={{ width: "620px", marginTop: "65px", overflow:"hidden" }}
             role="presentation"
         >
-            <FormComponenet />
+        
+            {/* <FormComponenet /> */}
+            <ReqFormComponent/>
+          
         </Box>
     );
 

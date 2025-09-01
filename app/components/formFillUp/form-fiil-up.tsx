@@ -8,6 +8,9 @@ import { Control, Controller, FieldErrors, useForm, UseFormRegister } from 'reac
 import { formFillUpSchema, FormFillUpSchema } from "../../schema/form.schema";
 import { zodResolver } from '@hookform/resolvers/zod';
 import stylee from "./from-fill.module.css"
+import CustomTextFeild from "@/app/newRequirementForm/inputSection/textFeild.tsx/textfeildComponent";
+import CustomSelect from "@/app/newRequirementForm/inputSection/select/customSelect";
+import CustomAutoComplete from "@/app/newRequirementForm/inputSection/autoComplete/cutomAutoComplete";
 const CustomTextField = styled(TextField)({
 
     width: "545px",
@@ -23,33 +26,33 @@ const CustomTextField = styled(TextField)({
 });
 
 
-const CustomSelect = styled(Select)({
-    marginLeft: "2px", width: "273px", '& .MuiOutlinedInput-notchedOutline': {
-        borderRadius: '10px',
-        height: "50px",
-    }, '& .MuiInputLabel-root': {
-        fontSize: '14px',
-        color: "#9E9E9E",
-        top: "-5px",
+// const CustomSelect = styled(Select)({
+//     marginLeft: "2px", width: "273px", '& .MuiOutlinedInput-notchedOutline': {
+//         borderRadius: '10px',
+//         height: "50px",
+//     }, '& .MuiInputLabel-root': {
+//         fontSize: '14px',
+//         color: "#9E9E9E",
+//         top: "-5px",
 
 
-    },
-})
-const CustomAutoComplete = styled(Autocomplete)({
-    width: "273px",
-    height: "8px",
-    marginLeft: "2px",
-    '& .MuiOutlinedInput-notchedOutline': {
-        borderRadius: '10px',
-        height: "50px"
-    },
-    '& .MuiInputLabel-root': {
-        fontSize: '14px',
-        color: "#9E9E9E",
-        marginLeft: "-8px"
+//     },
+// })
+// const CustomAutoComplete = styled(Autocomplete)({
+//     width: "273px",
+//     height: "8px",
+//     marginLeft: "2px",
+//     '& .MuiOutlinedInput-notchedOutline': {
+//         borderRadius: '10px',
+//         height: "50px"
+//     },
+//     '& .MuiInputLabel-root': {
+//         fontSize: '14px',
+//         color: "#9E9E9E",
+//         marginLeft: "-8px"
 
-    },
-})
+//     },
+// })
 const CustomSVGIcon = () => (
     <img
         src="/info.svg"
@@ -72,24 +75,13 @@ export default function FormFillUp({ register, control, errors }: FormFillUpProp
 
         <>
             <Stack direction="column" paddingLeft="24px" paddingRight="24px">
-                <Box>
-                    <CustomTextField
-                        {...register("name")}
-                        error={!!errors.name}
-                        helperText={errors.name?.message}
-                        slotProps={{
-                            inputLabel: {
-                                classes: {
-                                    shrink: styles.shrunkLabel
-                                }
-                            }
-                        }} id="outlined-basic" label="Name" variant="outlined" />
+                
 
-                    <CustomTextField {...register("requestedBy")}
-                        error={!!errors.requestedBy}
-                        helperText={errors.requestedBy?.message} label="Requested by" variant="outlined" />
-                </Box>
-                <Box sx={{ display: "flex", gap: "15px" }}>
+                {/* <Box sx={{ display: "flex", gap: "15px" }}>
+
+       
+
+
 
                     {/* <CustomAutoComplete
                             disablePortal
@@ -101,34 +93,12 @@ export default function FormFillUp({ register, control, errors }: FormFillUpProp
                                         left: '10px',
                                         fontSize: '14px',
                                     },
-                                }} />}
-                        /> */}
-                    <Controller
-                        name="requestingInstitution"
-                        control={control}
-                        render={({ field }) => (
-                            <CustomAutoComplete
-                                {...field}
-                                disablePortal
-                                options={["IIT", "NIT", "LPU"]}
-                                renderInput={(params) => (
-                                    <TextField
-                                        {...params}
-                                        label="Requesting institution"
-                                        error={!!errors.requestingInstitution}
-                                        helperText={errors.requestingInstitution?.message} InputLabelProps={{
-                                            sx: {
-                                                top: '-4px',
-                                                left: '10px',
-                                                fontSize: '14px',
-                                            },
-                                        }}
-                                    />
-                                )}
-                            />
-                        )}
-                    />
-                    <Controller
+                                }} />*/}
+                  
+                          
+                 
+                   
+                    {/* <Controller
                         name="type"
                         control={control}
                         render={({ field }) => (
@@ -154,7 +124,10 @@ export default function FormFillUp({ register, control, errors }: FormFillUpProp
                             />
                         )}
                     />
-                </Box>
+                </Box> */}
+    
+
+                <CustomSelect labelValue={"Domain"}/>
                 <Controller
                     name="domain"
                     control={control}
@@ -461,7 +434,7 @@ export default function FormFillUp({ register, control, errors }: FormFillUpProp
                         </CustomSelect>
 
                     </FormControl>
-                </Box>
+                </Box> */}
                 <Typography className={styles.benificier} variant="h6" color=" #424242" sx={{ marginLeft: "20px", marginTop: "3px", marginBottom: "3px", color: "#9E9E9E" }}>Timeline</Typography>
                 <DateComponent />
                 <Typography className={styles.benificier} variant="h6" color=" #424242" sx={{ marginLeft: "24px", marginTop: "23px", color: "#9E9E9E" }}>Description</Typography>

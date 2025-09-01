@@ -120,16 +120,19 @@ export default function FormComponenet() {
                         padding: "8px",
                     }}><CloseIcon sx={{ fontSize: "19px", background: "" }} /></IconButton></Box>
             </Paper >
-            <Box sx={{
+           
+           
+           
+            {/* <Box sx={{
                 maxHeight: "80vh",
                 overflowY: "auto",
                 background: "#fff",
                 p: 2,
             }}>
                 
-                <FormFillUp register={register} control={control} errors={errors} />
-                <Description/>
-            </Box>
+                {/* <FormFillUp register={register} control={control} errors={errors} /> */}
+                {/* <Description/> */}
+            {/* </Box> */} 
             <Box sx={{ display: "flex", flexDirection: "row-reverse", marginRight: "15px" }}>
                 <Button
                     sx={{ textTransform: 'none', color: "#01579b", fontWeight: 600, fontStyle: 'normal', fontFamily: "Open Sans, Arial, sans-serif", fontSize: "14px", marginRight: "45px" }}
