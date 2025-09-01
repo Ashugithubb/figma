@@ -2,33 +2,38 @@ import { z } from "zod";
 
 export const formFillUpSchema = z.object({
   name: z.string().min(1, "Required"),
-  requestedBy: z.string().min(1,  "Required"),
+  requestedBy: z.string().min(1, "Required"),
 
-  requestingInstitution: z.string().min(1,  "Required"),
-  type: z.string().min(1,  "Required"),
+  requestingInstitution: z.string().min(1),
+  type: z.string().min(1, "Required"),
 
   domain: z.string().min(1, "Required"),
-  collaboratorDomain: z.string().optional(),
-  followerDomain: z.string().optional(),
 
-  benifitedInstitutions: z.string().min(1,  "Required"),
-  studyModality: z.string().optional(),
-  mandatory: z.enum(["Yes", "No"]),
-  alternativeSolutions: z.enum(["Yes", "No"]),
-  userImpact: z.enum(["low", "medium", "high"]),
+  collaboratorDomain: z.array(z.string()).optional(),
+
+  followerDomain: z.array(z.string()).optional(),
+
+  benefitedInstitutions: z.array(z.string()).min(1, "Required"),
+
+  studyModality: z.array(z.string()).min(1, "Required"),
+
+  mandatory: z.string().min(1, "Required"),
+
+  alternativeSolutionExist: z.string().min(1, "Required"),
+
+  userImpact: z.string().min(1, "Required"),
+
   impact: z.string().optional(),
-  complexityEffort: z.enum(["XS", "S", "M", "L"]),
-  clientPriority: z.enum(["Ten", "Twenty", "Thirty"]),
-  status: z.enum(["registred", "not-registred"]),
+
+  complexityAndEffort: z.string().min(1, "Required"),
 
 
-  startDate: z.date().optional(),
-  finishDate: z.date().optional(),
+  clientPriority: z.string().min(1, "Required"),
 
-  description: z.string().optional()
+  status: z.string().min(1, "Required"),
+  
+  description: z.string().min(1, "Required"),
 });
 
 export type FormFillUpSchema = z.infer<typeof formFillUpSchema>;
-
-
  

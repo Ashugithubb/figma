@@ -14,12 +14,12 @@ export default function DateComponent() {
             <Box sx={{ display: "flex" }}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={['DatePicker']} sx={{
-                        marginLeft: "24px", width: "300px",
+                        marginLeft: "17px", width: "400px",
                     }}>
                         <DatePicker label="Start Date" value={startDate} onChange={(selectedDate) => { setDate(selectedDate) }} slotProps={{
                             textField: {
                                 size: 'small', InputProps: {
-                                    sx: { borderRadius: '10px',  },
+                                    sx: { borderRadius: '10px', },
                                 },
                             }
                         }}
@@ -28,11 +28,11 @@ export default function DateComponent() {
                                 "& .MuiInputBase-input": {
                                     height: "100px",
                                     fontSize: "14px",
-                                   
+
 
 
                                 },
-                                '& .MuiInputLabel-root': { color:"#9E9E9E",},
+                                '& .MuiInputLabel-root': { color: "#9E9E9E", },
                                 height: "40px"
 
 
@@ -42,7 +42,7 @@ export default function DateComponent() {
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={['DatePicker']} sx={{
-                        marginLeft: "24px", width: "287px", fontSize: "14px",
+                        marginLeft: "17px", fontSize: "14px", width: "330px"
                     }}  >
                         <DatePicker label="Finish Date" minDate={startDate ?? undefined} slotProps={{
                             textField: {
@@ -52,12 +52,12 @@ export default function DateComponent() {
                             }
                         }}
                             sx={{
-                                width: "273px",
+                                width: "340px",
                                 "& .MuiInputBase-input": {
                                     height: "10px",
 
                                 },
-                                   '& .MuiInputLabel-root': { color:"#9E9E9E",},
+                                '& .MuiInputLabel-root': { color: "#9E9E9E", },
                                 fontSize: "14px",
                                 height: "40px",
 
@@ -69,9 +69,9 @@ export default function DateComponent() {
             </Box>
             <Box sx={{ display: "flex" }}>
                 <Typography sx={{
-                    marginLeft: "30px", color: "#9E9E9E", fontSize: "11px", fontWeight: "400"
+                    marginLeft: "22px", color: "#9E9E9E", fontSize: "11px", fontWeight: "400"
                 }}>optional</Typography>
-                <Typography sx={{ marginLeft: "285px", color: "#9E9E9E", fontSize: "11px", fontWeight: "400" }}>optional</Typography>
+                <Typography sx={{ marginLeft: "250px", color: "#9E9E9E", fontSize: "11px", fontWeight: "400" }}>optional</Typography>
             </Box >
         </>
     )

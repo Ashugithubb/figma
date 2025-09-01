@@ -38,7 +38,7 @@ export default function AnchorTemporaryDrawer() {
 
     const list = (anchor: Anchor) => (
         <Box
-            sx={{ width: "610px", marginTop: "65px", overflow:"hidden" }}
+            sx={{ width: "620px", marginTop: "65px", overflow:"hidden" }}
             role="presentation"
         >
             <FormComponenet />
