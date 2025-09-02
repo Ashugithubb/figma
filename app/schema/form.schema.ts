@@ -4,7 +4,7 @@ export const formFillUpSchema = z.object({
   name: z.string().min(1, "Required"),
   requestedBy: z.string().min(1, "Required"),
 
-  requestingInstitution: z.string().min(1),
+  requestingInstitution: z.string().min(1, "Required"),
   type: z.string().min(1, "Required"),
 
   domain: z.string().min(1, "Required"),

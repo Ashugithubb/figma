@@ -22,17 +22,13 @@ export default function CustomAutoComplete({ labelValue }: { labelValue: string 
                 options={[]}
                 size='small'
                 sx={{
-                    width: 300,
                     '& .MuiOutlinedInput-notchedOutline': {
                         borderRadius: '10px',
-                        height: "50px"
                     },
                     '& .MuiInputLabel-root': {
                         fontSize: '14px',
                         color: "#9E9E9E",
                     },
-
-
                 }}
                 renderInput={(params) => <TextField {...params} label={labelValue} />}
             />

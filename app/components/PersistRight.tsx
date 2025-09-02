@@ -10,8 +10,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import FormFillUp from './formFillUp/form-fiil-up';
-import FormComponenet from './form';
+
 import ReqFormComponent from '../newRequirementForm/requirment';
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -39,11 +38,10 @@ export default function AnchorTemporaryDrawer() {
 
     const list = (anchor: Anchor) => (
         <Box
-            sx={{ width: "620px", marginTop: "65px", overflow:"hidden" }}
+
+            sx={{marginTop: "65px", overflow:"hidden" }}
             role="presentation"
         >
-        
-            {/* <FormComponenet /> */}
             <ReqFormComponent/>
           
         </Box>

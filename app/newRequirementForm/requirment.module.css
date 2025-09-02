@@ -1,23 +1,28 @@
-.mainBox{
-    width: 610px;
-    height: 1350px;
-    display:flex;
-    gap:24px;
-    padding:24px;
-    flex-direction: column;
+.mainBox {
+  width: 610px;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  flex-direction: column;
+  height: calc(100vh - 92px);
+  overflow-y: auto;
 }
-/* .header {
+
+
+
+.header {
     display: flex;
     height: 40px;
     padding: 8px 16px 8px 24px;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    font-weight: 600;
     border-bottom: 1px solid var(--Neutral-Neutral-300, #E0E0E0);
     background: var(--Alternate-Alternate-50, #F7F9FC);
-} */
+}
 
-/* .text {
+.text {
     color: #424242;
     font-family: "Open Sans";
     font-size: 22px;
@@ -27,4 +32,8 @@
     display: flex;
     align-items: center;
 
-} */
+}
+
+.select{
+    width: "100%";
+}
