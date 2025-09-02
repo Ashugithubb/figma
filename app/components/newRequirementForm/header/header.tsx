@@ -19,7 +19,7 @@ export default function HeaderComponent() {
                 px: "24px",
             }}
         >
-            <Box className={style.text} >New requirment</Box>
+            <Box className={style.text} >New requirement</Box>
             <Box className={style.header}>
                 <IconButton sx={{
                     padding: "8px",

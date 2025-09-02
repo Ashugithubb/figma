@@ -15,8 +15,15 @@ import {
 import EditorMenuControls from "./EditorMenuControls";
 import useExtensions from "./useExtensions";
 import style from './editor.module.css'
+import { useFormContext } from "react-hook-form";
 
 export default function Editor() {
+      const {
+            register,
+            control,
+            formState: { errors },
+        } = useFormContext();
+        
     const extensions = useExtensions({
         placeholder: "",
     });
@@ -33,7 +40,6 @@ export default function Editor() {
                 editable={isEditable}
                 immediatelyRender={false}
                 sx={{
-
                     "& .ProseMirror": {
                         minHeight: "280px",
                         maxHeight: "500px",
@@ -45,7 +51,6 @@ export default function Editor() {
                 renderControls={() => <EditorMenuControls />}
                 RichTextFieldProps={{
                     variant: "standard",
-                   
                 }}
             ></RichTextEditor>
         </>
