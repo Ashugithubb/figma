@@ -2,7 +2,7 @@
 
 import { AppBar, Box, Button, Typography } from "@mui/material";
 import { useSession } from "next-auth/react";
-import FormComponenet from "../components/form";
+
 import PersistentDrawerLeft from "../../dummy/AppBar";
 import AnchorTemporaryDrawer from "../components/PersistRight";
 import MiniDrawer from "../components/drawer/parmanentDrawaer";
@@ -18,7 +18,7 @@ export default function Home() {
       <Box className={styles.page}>
         <Box sx={{ zIndex: 1 }}><MiniDrawer /></Box>
         <Box sx={{ display: "flex", zIndex: 10000, justifyContent: "flex-end" }}> <AnchorTemporaryDrawer /></Box>
-       
+      
       </Box>
     
     </>

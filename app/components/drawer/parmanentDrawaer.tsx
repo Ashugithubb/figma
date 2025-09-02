@@ -170,9 +170,9 @@ export default function MiniDrawer() {
                 <Typography sx={{ marginBottom: 2,color: "#424242", fontSize: "32px",}}>
                   Requirements list
                 </Typography>
-                <Typography sx={{ marginBottom: 2 }}>
+               <Typography component={'span'} variant={'body2'} sx={{ marginBottom: 2 }}> 
                     <Box sx={{ marginLeft:"-80px",width:"1832px",height:"964px"}}> <HomePaper/></Box>
-                </Typography>
+                </Typography> 
             </Box>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />

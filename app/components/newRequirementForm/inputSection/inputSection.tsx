@@ -30,18 +30,25 @@ export default function InputSection() {
                             error={!!errors.requestingInstitution}
                             helperText={errors.requestingInstitution?.message as string} /></Box>
                     <Box sx={{ flex: 1 }}> <CustomSelect labelValue={"Type"}{
-                            ...register("type")}
-                            error={!!errors.type}
-                            helperText={errors.type?.message as string} /></Box>
+                        ...register("type")}
+                        error={!!errors.type}
+                        helperText={errors.type?.message as string} /></Box>
                 </Box>
                 <Box sx={{ width: "100%" }}> <CustomSelect labelValue={"Domain"} {
-                            ...register("domain")}
-                            error={!!errors.domain}
-                            helperText={errors.domain?.message as string} /></Box>
+                    ...register("domain")}
+                    error={!!errors.domain}
+                    helperText={errors.domain?.message as string} /></Box>
 
                 <Box sx={{ display: "flex", gap: "16px", width: "100%" }}>
-                    <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}> <CustomAutoComplete labelValue={"Collaborator domains"} /><Typography sx={{ fontSize: "11px", height: "16px", marginLeft: "16px", color: "#9E9E9E" }}>Optional</Typography></Box>
-                    <Box sx={{ flex: 1 }}>  <CustomAutoComplete labelValue={"Follower Domain"} /><Typography sx={{ fontSize: "11px", height: "16px", marginLeft: "16px", color: "#9E9E9E" }}>Optional</Typography></Box>
+                    <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}> <CustomAutoComplete labelValue={"Collaborator domains"} {
+                        ...register("collaboratorDomain")}
+                        error={!!errors.collaboratorDomain}
+                        helperText={errors.collaboratorDomain?.message as string} /><Typography sx={{ fontSize: "11px", height: "16px", marginLeft: "16px", color: "#9E9E9E" }}>Optional</Typography></Box>
+                    
+                    <Box sx={{ flex: 1 }}>  <CustomAutoComplete labelValue={"Follower Domain"} {
+                        ...register("followerDomain")}
+                        error={!!errors.followerDomain}
+                        helperText={errors.followerDomain?.message as string} /><Typography sx={{ fontSize: "11px", height: "16px", marginLeft: "16px", color: "#9E9E9E" }}>Optional</Typography></Box>
                 </Box>
 
             </Box>

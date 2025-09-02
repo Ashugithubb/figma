@@ -5,7 +5,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Box, IconButton, Typography } from '@mui/material';
 import { useState } from 'react';
 import { Dayjs } from 'dayjs';
-
+import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 export default function DateComponent() {
   const [startDate, setDate] = useState<Dayjs | null>(null);
 
@@ -19,9 +19,10 @@ export default function DateComponent() {
               <DatePicker
                 slots={{
                   openPickerIcon: () => (
-                    <IconButton>
-                      <img src="./calendar_today.svg" alt="calendar" />
-                    </IconButton>
+                    // <IconButton>
+
+                      <CalendarTodayOutlinedIcon />
+                    // </IconButton>
                   ),
                 }}
                 label="Start Date"
@@ -56,9 +57,10 @@ export default function DateComponent() {
               <DatePicker
                 slots={{
                   openPickerIcon: () => (
-                    <IconButton>
-                      <img src="./calendar_today.svg" alt="calendar" />
-                    </IconButton>
+                    // <IconButton>
+
+                      <CalendarTodayOutlinedIcon />
+                    // </IconButton>
                   ),
                 }}
                 label="Finish Date"

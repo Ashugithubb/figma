@@ -6,7 +6,17 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import style from './select.module.css'
 import { Autocomplete, TextField } from '@mui/material';
-export default function CustomAutoComplete({ labelValue }: { labelValue: string }) {
+
+interface CustomTextFeildProps {
+    labelValue: string;
+    error?: boolean;
+    helperText?: string;
+}
+export default function CustomSelect({
+    labelValue,
+    error,
+    helperText,
+}: CustomTextFeildProps) {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -14,23 +24,25 @@ export default function CustomAutoComplete({ labelValue }: { labelValue: string 
     };
 
     return (
-
         <>
             <Autocomplete
-                 multiple
                 disablePortal
                 options={[]}
                 size='small'
                 sx={{
                     '& .MuiOutlinedInput-notchedOutline': {
-                        borderRadius: '10px',
+                        borderRadius: '8px',
                     },
                     '& .MuiInputLabel-root': {
                         fontSize: '14px',
-                        color: "#9E9E9E",
+                        color: error ? "#d32f2f" : "#9E9E9E",
                     },
                 }}
-                renderInput={(params) => <TextField {...params} label={labelValue} />}
+
+                renderInput={(params) => <TextField {...params} label={labelValue}
+                    error={error}
+                    helperText={helperText} />}
+
             />
 
         </>)

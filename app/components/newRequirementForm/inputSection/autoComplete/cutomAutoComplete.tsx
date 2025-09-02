@@ -12,10 +12,13 @@ interface CustomTextFeildProps {
     error?: boolean;
     helperText?: string;
 }
-export default function CustomSelect({
+
+
+export default function CustomAutoComplete({
     labelValue,
     error,
     helperText,
+
 }: CustomTextFeildProps) {
     const [age, setAge] = React.useState('');
 
@@ -27,23 +30,22 @@ export default function CustomSelect({
 
         <>
             <Autocomplete
+                multiple
                 disablePortal
                 options={[]}
                 size='small'
                 sx={{
                     '& .MuiOutlinedInput-notchedOutline': {
-                        borderRadius: '8px',
+                        borderRadius: '10px',
                     },
                     '& .MuiInputLabel-root': {
                         fontSize: '14px',
-                        color: "#9E9E9E",
+                       color: error ? "#d32f2f" : "#9E9E9E",
                     },
                 }}
-
                 renderInput={(params) => <TextField {...params} label={labelValue}
                     error={error}
                     helperText={helperText} />}
-
             />
 
         </>)
