@@ -1,1 +1,5 @@
-.mktoForm form.mktoForm .mktoFieldWrap fieldset {border: 0 !important;}
+.noBorder:focus {
+  outline: none !important;
+  border: none !important;
+}
+

@@ -94,7 +94,7 @@ export default function SimpleDialogDemo() {
                 <Box sx={{ display: "flex", gap: 1 }}>
                     <Avatar alt="" src="/static/images/avatar/1.jpg" sx={{ width: "20px", height: "20px", color: "#01579B", background: "white" }} />
                     <Typography sx={{ height: "20px" }}>Ashutosh </Typography>
-                    <IconButton sx={{ marginTop: "-9px" }}><KeyboardArrowDownIcon sx={{ color: "white" }} /></IconButton>
+                    <Box sx={{ marginTop: "-9px" }}><KeyboardArrowDownIcon sx={{ color: "white" }} /></Box>
                 </Box>
 
             </Button>

@@ -27,37 +27,27 @@ export default function Editor() {
     return (
         <>
 
-            <RichTextEditor 
+            <RichTextEditor
                 ref={rteRef}
                 extensions={extensions}
                 editable={isEditable}
+                immediatelyRender={false}
                 sx={{
-                    height: "280px",
-                    postion: "relative",
-                    '& .MuiOutlinedInput-notchedOutline': {
-                        border: 'none',
+
+                    "& .ProseMirror": {
+                        minHeight: "280px",
+                        maxHeight: "500px",
+                        overflowY: "auto",
+                        padding: "12px",
+                        height: "300px"
                     },
-                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                        border: 'none',
-                    },
-                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                        border: 'none',
-                    },
-                   '&.mktoForm form.mktoForm .mktoFieldWrap fieldset': {border: "0px"}
+                }}
+                renderControls={() => <EditorMenuControls />}
+                RichTextFieldProps={{
+                    variant: "standard",
                    
                 }}
-            immediatelyRender={false}
-            editorProps={{
-            }}
-            renderControls={() => <EditorMenuControls />}
-            RichTextFieldProps={{
-                variant: "outlined",
-                border: "none",
-
-
-            }}
-            >
-        </RichTextEditor >
+            ></RichTextEditor>
         </>
     );
 }
